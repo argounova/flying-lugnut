@@ -22,3 +22,55 @@
     border-top: solid 15px var(--minionyellow);
     border-left: solid 10px var(--minionyellow);
 }
+
+@media screen and (max-width: 1199px) {
+    .audiowide {
+        font-size: 4rem;
+    }
+
+    .fasterone{
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .audiowide {
+        font-size: 3rem;
+    }
+
+    .fasterone{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .audiowide {
+        font-size: 3rem;
+    }
+
+    .fasterone{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 629px) {
+    .audiowide {
+        font-size: 2.75rem;
+    }
+
+    .fasterone{
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .audiowide {
+        font-size: 2rem;
+        margin-bottom: -20px;
+
+    }
+
+    .fasterone{
+        font-size: 1.25rem;
+    }
+}

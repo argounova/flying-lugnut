@@ -83,7 +83,7 @@ const MainCarousel = () => {
             </Row>
             <Row className='d-flex p-0' style={{ marginBottom: '2%' }}>
                 <Col className='custom-border-left'></Col>
-                <Col>
+                <Col xs={9} md={8} xxl={7}>
                     <Stack className='d-flex align-items-center justify-content-center p-0'>
                         <p className='audiowide'>FLYING LUGNUT</p>
                         <p className='fasterone'>Custom Hot Wheels</p>

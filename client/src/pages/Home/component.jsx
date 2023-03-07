@@ -58,7 +58,7 @@ const Home = () => {
                 </Col>
             </Row>
             <p style={{ fontSize: '5rem', textAlign: 'center', color: '#000', marginBottom: '-20px', marginTop: '2%' }}>New Arrivals</p>
-            <Row className='g-0'>
+            <Row>
                 <Col>
                     <NewArrival
                         newProductImage={ NewCivicEG }

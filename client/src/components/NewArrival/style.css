@@ -1,0 +1,79 @@
+.new-arrival-title {
+    font-size: 3rem;
+    margin-bottom: -15px;
+    text-align: center;
+}
+
+.new-arrival-subtitle {
+    font-size: 2rem;
+    margin-bottom: -5px;
+    text-align: center;
+}
+
+.new-arrival-buy-btn {
+    width: 100%;
+    background-color: var(--searsblue);
+    color: var(--white);
+    border: none;
+}
+
+@media screen and (max-width: 1747px) {
+    .new-arrival-title {
+        font-size: 2rem;
+    }
+
+    .new-arrival-subtitle{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .new-arrival-title {
+        font-size: 1.75rem;
+        margin-bottom: -10px;
+
+    }
+
+    .new-arrival-subtitle{
+        font-size: 1.25rem;   
+        margin-bottom: 0px;
+
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .new-arrival-title {
+        font-size: 1.5rem;
+    }
+
+    .new-arrival-subtitle{
+        font-size: 1.15rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .new-arrival-title {
+        font-size: 1.3rem;
+    }
+
+    .new-arrival-subtitle{
+        font-size: 1rem;
+        margin-bottom: 0px;
+    }
+
+    .new-arrival-buy-btn {
+        margin-bottom: 2%;
+    }
+}
+
+@media screen and (max-width: 449px) {
+    .new-arrival-title {
+        font-size: 1.1rem;
+        margin-bottom: -4px;
+
+    }
+
+    .new-arrival-subtitle{
+        font-size: 0.9rem;
+    }
+}
