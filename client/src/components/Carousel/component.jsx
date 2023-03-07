@@ -22,7 +22,7 @@ const MainCarousel = () => {
     return (
         <Container>
             <Row className="p-0">
-                <Carousel className="p-0" fade controls={false} indicators={false}>
+                <Carousel className="main-carousel" fade controls={false} indicators={false}>
                     <Carousel.Item>
                         <Image
                             className='d-block w-100'
@@ -81,7 +81,7 @@ const MainCarousel = () => {
                     </Carousel.Item>
                 </Carousel>
             </Row>
-            <Row className='d-flex p-0' style={{ marginBottom: '2%' }}>
+            <Row className='d-flex'>
                 <Col className='custom-border-left'></Col>
                 <Col xs={9} md={8} xxl={7}>
                     <Stack className='d-flex align-items-center justify-content-center p-0'>

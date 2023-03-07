@@ -4,12 +4,11 @@
     color: #000;
     font-weight: bold;
     border: none;
+    border-radius: 0px;
     box-shadow: 4px 6px 4px;
 }
 
 .product-card-btn:hover {
-    width: 81%;
-    background-color: var(--minionyellow);
+    background-color: var(--minionhighlight);
     color: #000;
-    font-size: 1.05rem;
 }

@@ -1,9 +1,12 @@
 :root{
   --cornflowerblue: #2C84C7;
   --searsblue: #005490;
+  --searshighlight: #006ab6;
   --minionyellow: #F1D74D;
+  --minionhighlight: #ffe459;
   --rustyred: #D42F41;
   --white: #ffffff;
+  --black: #000000;
 }
 
 body {

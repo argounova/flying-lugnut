@@ -12,7 +12,7 @@ import HW1 from '../../assets/images/hw-shelbygt500-freeship-companion.jpg';
 
 // Components
 import MainCarousel from '../../components/Carousel/component';
-import ProductCard from '../../components/ProductCard/component';
+import FeaturedCard from '../../components/FeaturedCard/component';
 import NewArrival from '../../components/NewArrival/component';
 
 // Images
@@ -26,13 +26,13 @@ const Home = () => {
     if(error) return <p>Someting Went Wrong</p>
 
     return (
-        <Container fluid>
+        <Container fluid className='p-0'>
             <Row>
                 <MainCarousel/>
             </Row>
-            <Row className='mt-2 mb-3 d-flex align-items-center justify-content-center g-0'>
+            <Row className='d-flex align-items-center justify-content-center g-0 pt-5' style={{ backgroundColor: '#fff'}}>
                 {data.fourCars.map(car => (
-                    <ProductCard
+                    <FeaturedCard
                         key={car.id}
                         car={car}
                         productTitle={ car.make + ' ' + car.model + ' ' + car.trim }
@@ -41,9 +41,9 @@ const Home = () => {
                         productView={ `/cars/${car.id}` }
                     />
                 ))}
-                <Button className='view-all-inventory justify-content-center' size='lg' href='http://localhost:3000/browse-all'>View our complete inventory</Button>
+                <Button className='view-all-inventory justify-content-center' style={{ borderRadius: '0px' }} href='http://localhost:3000/browse-all'>SHOP NOW</Button>
             </Row>
-            <Row className='g-0' style={{ marginTop: '2%' }}>
+            {/* <Row className='g-0' style={{ marginTop: '2%' }}>
                 <Col className='free-ship-banner d-flex'>
                     <Stack className='d-flex align-items-center justify-content-center' gap={5}>
                         <div className='d-flex flex-column align-items-center'>
@@ -56,9 +56,9 @@ const Home = () => {
                 <Col>
                     <Image src={HW1} fluid/>
                 </Col>
-            </Row>
-            <p style={{ fontSize: '5rem', textAlign: 'center', color: '#000', marginBottom: '-20px', marginTop: '2%' }}>New Arrivals</p>
-            <Row>
+            </Row> */}
+            <p style={{ fontSize: '5rem', textAlign: 'center', color: '#fff', marginBottom: '-20px', backgroundColor: '#000'}}>New Arrivals</p>
+            <Row style={{ backgroundColor: '#000' }}>
                 <Col>
                     <NewArrival
                         newProductImage={ NewCivicEG }

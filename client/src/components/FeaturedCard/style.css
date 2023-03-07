@@ -1,0 +1,44 @@
+.featured-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    min-width: 180px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.featured-title-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--minionyellow);
+}
+
+.featured-title {
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-bottom: -4px;
+}
+
+.featured-subtitle {
+    color: var(--black);
+}
+
+.featured-card-btn {
+    width: 80%;
+    background-color: var(--searsblue);
+    color: var(--white);
+    font-weight: bold;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 4px 6px 4px #000;
+}
+
+.featured-card-btn:hover {
+    background-color: var(--searshighlight);
+    color: var(--white);
+}

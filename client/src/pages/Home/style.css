@@ -4,10 +4,10 @@ body {
 
 .view-all-inventory {
     background-color: var(--minionyellow);
-    color: #000;
+    color: var(--black);
     font-size: 2.5rem;
     border: none;
-    width: 50%;
+    width: 40%;
     margin-top: 2%;
     margin-bottom: 3%;
     display: flex;
@@ -16,10 +16,8 @@ body {
 }
 
 .view-all-inventory:hover {
-    background-color: var(--minionyellow);
+    background-color: var(--minionhighlight);
     color: #000;
-    width: 51%;
-    font-size: 2.55rem;
 }
 
 .free-ship-banner {
