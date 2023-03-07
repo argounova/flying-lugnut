@@ -43,7 +43,7 @@ const Footer = () => {
                             className="me-2"
                             aria-label="Search"
                             />
-                            <Button variant="danger">Subscribe</Button>
+                            <Button variant="danger" href="http://localhost:3000/coming-soon">Subscribe</Button>
                         </Form>
                     </Stack>
                 </Col>

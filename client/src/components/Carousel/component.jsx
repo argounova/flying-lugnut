@@ -85,7 +85,7 @@ const MainCarousel = () => {
                 <Col className='custom-border-left'></Col>
                 <Col>
                     <Stack className='d-flex align-items-center justify-content-center p-0'>
-                        <p className='audiowide'>Flying Lugnut</p>
+                        <p className='audiowide'>FLYING LUGNUT</p>
                         <p className='fasterone'>Custom Hot Wheels</p>
                     </Stack>
                 </Col>

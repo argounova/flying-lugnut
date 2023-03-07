@@ -27,7 +27,7 @@ const Navigation = () => {
                     className="me-2"
                     aria-label="Search"
                     />
-                    <Button variant="outline-light">Search</Button>
+                    <Button variant="outline-light" href="http://localhost:3000/coming-soon">Search</Button>
                 </Form>
                 <Navbar.Toggle aria-controls="toggle-nav"/>
                     <Navbar.Collapse 
