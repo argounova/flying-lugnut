@@ -1,0 +1,17 @@
+.comingSoonDiv {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comingSoonTitle {
+    font-size: 5rem;
+    color: var(--white);
+}
+
+.comingSoonInfo {
+    font-size: 1.5rem;
+    color: var(--white);
+}

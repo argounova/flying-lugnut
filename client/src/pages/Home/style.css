@@ -1,0 +1,40 @@
+body {
+    background-color: var(--cornflowerblue);
+}
+
+.view-all-inventory {
+    background-color: var(--minionyellow);
+    color: #000;
+    font-size: 2.5rem;
+    border: none;
+    width: 50%;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    display: flex;
+    align-items: center;
+    box-shadow: 5px 8px 5px;
+}
+
+.view-all-inventory:hover {
+    background-color: var(--minionyellow);
+    color: #000;
+    width: 51%;
+    font-size: 2.55rem;
+}
+
+.free-ship-banner {
+    background-color: var(--rustyred);
+    color: var(--white);
+}
+
+.free-ship-banner p {
+    font-size: 5rem;
+}
+
+.free-ship-banner-btn {
+    background-color: var(--searsblue);
+    color: var(--minionyellow);
+    font-size: 2rem;
+    border: none;
+    width: 75%;
+}

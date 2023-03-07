@@ -1,0 +1,11 @@
+:root{
+  --cornflowerblue: #2C84C7;
+  --searsblue: #005490;
+  --minionyellow: #F1D74D;
+  --rustyred: #D42F41;
+  --white: #ffffff;
+}
+
+body {
+  max-width: 100vw;
+}

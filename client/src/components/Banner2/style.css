@@ -1,0 +1,13 @@
+.promoCodeDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background-color: var(--minionyellow);
+}
+
+.promoCodeCall {
+    font-size: 2rem;
+    font-weight: bold;
+}

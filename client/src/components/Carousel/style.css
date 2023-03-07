@@ -1,0 +1,24 @@
+.audiowide {
+    font-family: 'Audiowide', cursive;
+    color: var(--white);
+    font-size: 5rem;
+    margin-bottom: -30px;
+    text-align: center;
+}
+
+.fasterone {
+    font-family: 'Faster One', cursive;
+    font-size: 3rem;
+    margin-bottom: -15px;
+    text-align: center;
+}
+
+.custom-border-left {
+    border-top: solid 15px var(--minionyellow);
+    border-right: solid 10px var(--minionyellow);
+}
+
+.custom-border-right {
+    border-top: solid 15px var(--minionyellow);
+    border-left: solid 10px var(--minionyellow);
+}

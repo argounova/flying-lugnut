@@ -1,0 +1,15 @@
+.product-card-btn {
+    width: 80%;
+    background-color: var(--minionyellow);
+    color: #000;
+    font-weight: bold;
+    border: none;
+    box-shadow: 4px 6px 4px;
+}
+
+.product-card-btn:hover {
+    width: 81%;
+    background-color: var(--minionyellow);
+    color: #000;
+    font-size: 1.05rem;
+}

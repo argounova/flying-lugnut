@@ -1,0 +1,20 @@
+.bannerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 0.5%;
+    height: fit-content;
+    background-color: var(--rustyred);
+    color: var(--white);
+}
+
+.bannerCall {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.bannerDetail {
+    font-size: 2rem;
+    font-style: italic;
+}
