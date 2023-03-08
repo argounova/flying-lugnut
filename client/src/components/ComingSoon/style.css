@@ -7,11 +7,19 @@
 }
 
 .comingSoonTitle {
+    text-align: center;
     font-size: 5rem;
     color: var(--white);
 }
 
 .comingSoonInfo {
+    text-align: center;
     font-size: 1.5rem;
     color: var(--white);
+}
+
+@media screen and (max-width: 575px) {
+    .comingSoonTitle {
+        font-size: 4rem;
+    }
 }

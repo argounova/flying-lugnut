@@ -8,6 +8,32 @@
 }
 
 .promoCodeCall {
-    font-size: 2rem;
+    text-align: center;
+    font-size: 1.9rem;
     font-weight: bold;
+    margin-bottom: -2px;
+}
+
+@media screen and (max-width: 991px) {
+    .promoCodeCall {
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (max-width: 867px) {
+    .promoCodeCall {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 691px) {
+    .promoCodeCall {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .promoCodeCall {
+        font-size: 0.75rem;
+    }
 }

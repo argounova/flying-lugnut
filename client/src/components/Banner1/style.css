@@ -10,11 +10,54 @@
 }
 
 .bannerCall {
+    text-align: center;
     font-size: 4rem;
     font-weight: bold;
+    margin-bottom: -1%;
 }
 
 .bannerDetail {
+    text-align: center;
     font-size: 2rem;
     font-style: italic;
+}
+
+@media screen and (max-width: 991px) {
+    .bannerCall {
+        font-size: 3.5rem;
+    }
+
+    .bannerDetail {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .bannerCall {
+        font-size: 3rem;
+    }
+
+    .bannerDetail {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 691px) {
+    .bannerCall {
+        font-size: 2.5rem;
+    }
+
+    .bannerDetail {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .bannerCall {
+        font-size: 2rem;
+    }
+
+    .bannerDetail {
+        font-size: 1rem;
+    }
 }
