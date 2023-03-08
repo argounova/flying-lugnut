@@ -2,7 +2,7 @@ body {
     background-color: var(--cornflowerblue);
 }
 
-.view-all-inventory {
+.shop-now-btn {
     background-color: var(--minionyellow);
     color: var(--black);
     font-size: 2.5rem;
@@ -15,9 +15,27 @@ body {
     box-shadow: 5px 8px 5px;
 }
 
-.view-all-inventory:hover {
+.shop-now-btn:hover {
     background-color: var(--minionhighlight);
     color: #000;
+}
+
+.new-arrival-custom-border-left {
+    border-bottom: solid 15px var(--minionyellow);
+    border-right: solid 10px var(--minionyellow);
+}
+
+.new-arrival-heading {
+    font-family: 'Audiowide', cursive;
+    color: var(--white);
+    font-size: 5rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.new-arrival-custom-border-right {
+    border-bottom: solid 15px var(--minionyellow);
+    border-left: solid 10px var(--minionyellow);
 }
 
 .free-ship-banner {
@@ -35,4 +53,41 @@ body {
     font-size: 2rem;
     border: none;
     width: 75%;
+}
+
+@media screen and (max-width: 1199px) {
+    .new-arrival-heading {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .new-arrival-heading {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .new-arrival-heading {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 629px) {
+    .new-arrival-heading {
+        font-size: 2.75rem;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .new-arrival-heading {
+        font-size: 2rem;
+    }
+
+    .shop-now-btn {
+        width: 80%;
+        height: 50px;
+        margin-top: 6%;
+        margin-bottom: 10%;
+    }
 }

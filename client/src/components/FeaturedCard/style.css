@@ -19,12 +19,14 @@
 }
 
 .featured-title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    text-align: center;
     color: var(--black);
     margin-bottom: -4px;
 }
 
 .featured-subtitle {
+    text-align: center;
     color: var(--black);
 }
 
@@ -32,7 +34,6 @@
     width: 80%;
     background-color: var(--searsblue);
     color: var(--white);
-    font-weight: bold;
     border: none;
     border-radius: 0px;
     box-shadow: 4px 6px 4px #000;
@@ -41,4 +42,26 @@
 .featured-card-btn:hover {
     background-color: var(--searshighlight);
     color: var(--white);
+}
+
+@media screen and (max-width: 1199px) {
+    .featured-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .featured-title {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .featured-title {
+        font-size: 0.95rem;
+    }
+
+    .featured-subtitle {
+        font-size: 0.9rem;
+    }
 }

@@ -12,7 +12,7 @@ const FeaturedCard = (props) => {
     let productView = props.productView;
 
     return ( 
-        <div className="featured-div">
+        <div className="featured-div" style={{ marginBottom: '2%' }}>
             <Stack className="d-flex align-items-center justify-content-center" style={{ marginBottom: '-15px' }}>
                 <div>
                     <Image src={ productImage } style={{ width: '100%' }}/>
