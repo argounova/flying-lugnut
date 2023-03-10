@@ -23,6 +23,9 @@ const CarType = new GraphQLObjectType({
         exteriorColor: { type: GraphQLString },
         seriesName: { type: GraphQLString },
         inStock: { type: GraphQLBoolean },
+        newInventory: { type: GraphQLBoolean },
+        featured: { type: GraphQLBoolean },
+        clearance: { type: GraphQLBoolean },
         mainImage: { type: GraphQLString },
         detailImage1: { type: GraphQLString },
         detailImage2: { type: GraphQLString },
@@ -55,11 +58,32 @@ const RootQueryType = new GraphQLObjectType ({
                 return Car.findById(args.id);
             }
         },
-        fourCars: {
+        featuredCars: {
             type: new GraphQLList(CarType),
-            description: 'List of only four cars',
+            description: 'List of only featured cars',
             resolve(parent, args) {
-                return Car.find().limit(4);
+                return Car.find({ featured: true });
+            }
+        },
+        inStockCars: {
+            type: new GraphQLList(CarType),
+            description: 'List of only in stock cars',
+            resolve(parent, args) {
+                return Car.find({ inStock: true });
+            }
+        },
+        clearanceCars: {
+            type: new GraphQLList(CarType),
+            description: 'List of only clearance cars',
+            resolve(parent, args) {
+                return Car.find({ clearance: true });
+            }
+        },
+        newCars: {
+            type: new GraphQLList(CarType),
+            description: 'List of only new cars',
+            resolve(parent, args) {
+                return Car.find({ newInventory: true });
             }
         },
     },

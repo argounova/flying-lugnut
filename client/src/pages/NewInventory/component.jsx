@@ -6,10 +6,10 @@ import './style.css';
 import ProductCard from '../../components/ProductCard/component';
 import Banner1 from '../../components/Banner1/component';
 import Banner2 from '../../components/Banner2/component';
-import { GET_CARS } from '../../queries/carQueries';
+import { GET_NEWCARS } from '../../queries/carQueries';
 
 const NewInventory = () => {
-    const { loading, error, data } = useQuery(GET_CARS)
+    const { loading, error, data } = useQuery(GET_NEWCARS)
     if(loading) return <p>Loading...</p>
     if(error) return <p>Someting Went Wrong</p>
 
@@ -18,7 +18,7 @@ const NewInventory = () => {
             <Banner1/>
             <Banner2/>
             <Row className='mt-5 mb-5 d-flex align-items-center justify-content-center g-0'>
-                {data.cars.map(car => (
+                {data.newCars.map(car => (
                     <ProductCard
                         key={car.id}
                         car={car}

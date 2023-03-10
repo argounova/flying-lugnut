@@ -1,14 +1,12 @@
 import { useQuery } from '@apollo/client';
-import { GET_FOURCARS } from '../../queries/carQueries';
+import { GET_FEATUREDCARS } from '../../queries/carQueries';
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
-import Image from 'react-bootstrap/Image';
 import './style.css';
-import HW1 from '../../assets/images/hw-shelbygt500-freeship-companion.jpg';
 
 // Components
 import MainCarousel from '../../components/Carousel/component';
@@ -21,7 +19,7 @@ import NewCivicEF from '../../assets/images/NewArrival/new-honda-civic-ef.jpg';
 
 
 const Home = () => {
-    const { loading, error, data } = useQuery(GET_FOURCARS)
+    const { loading, error, data } = useQuery(GET_FEATUREDCARS)
     if(loading) return <p>Loading...</p>
     if(error) return <p>Someting Went Wrong</p>
 
@@ -30,18 +28,18 @@ const Home = () => {
             <Row>
                 <MainCarousel/>
             </Row>
-            <Row className='d-flex align-items-center justify-content-center g-0 pt-5' style={{ backgroundColor: '#fff'}}>
-                {data.fourCars.map(car => (
-                    <FeaturedCard
-                        key={car.id}
-                        car={car}
-                        productTitle={ car.make + ' ' + car.model + ' ' + car.trim }
-                        productSubtitle={ car.exteriorColor }
-                        productImage={ car.mainImage }
-                        productView={ `/cars/${car.id}` }
-                    />
-                ))}
-            </Row>
+                <Row className='d-flex align-items-center justify-content-center g-0 pt-5' style={{ backgroundColor: '#fff'}}>
+                    {data.featuredCars.map(car => (
+                        <FeaturedCard
+                            key={car.id}
+                            car={car}
+                            productTitle={ car.make + ' ' + car.model + ' ' + car.trim }
+                            productSubtitle={ car.exteriorColor }
+                            productImage={ car.mainImage }
+                            productView={ `/cars/${car.id}` }
+                        />
+                    ))}
+                </Row>
             <Row className='d-flex align-items-center justify-content-center g-0' style={{ marginTop: '-1px', backgroundColor: '#fff' }}>
                 <Button className='shop-now-btn justify-content-center' style={{ borderRadius: '0px' }} href='http://localhost:3000/browse-all'>SHOP NOW</Button>
             </Row>

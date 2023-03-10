@@ -19,6 +19,15 @@ const CarSchema = new mongoose.Schema({
     inStock: {
         type: Boolean,
     },
+    newInventory: {
+        type: Boolean,
+    },
+    clearance: {
+        type: Boolean,
+    },
+    featured: {
+        type: Boolean,
+    },
     mainImage: {
         type: String,
     },

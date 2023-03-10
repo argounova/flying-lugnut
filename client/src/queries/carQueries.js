@@ -15,15 +15,46 @@ const GET_CARS = gql`
   }
 `;
 
-const GET_FOURCARS = gql`
+const GET_FEATUREDCARS = gql`
   query getCars {
-    fourCars {
+    featuredCars {
       id
       make
       model
       trim
       exteriorColor
       inStock
+      featured
+      mainImage
+      etsyLink
+    }
+  }
+`;
+const GET_CLEARANCECARS = gql`
+  query getCars {
+    clearanceCars {
+      id
+      make
+      model
+      trim
+      exteriorColor
+      inStock
+      clearance
+      mainImage
+      etsyLink
+    }
+  }
+`;
+const GET_NEWCARS = gql`
+  query getCars {
+    newCars {
+      id
+      make
+      model
+      trim
+      exteriorColor
+      inStock
+      newInventory
       mainImage
       etsyLink
     }
@@ -53,4 +84,4 @@ const GET_CAR = gql`
   }
 `;
 
-export { GET_CARS, GET_FOURCARS, GET_CAR };
+export { GET_CARS, GET_FEATUREDCARS, GET_CLEARANCECARS, GET_NEWCARS, GET_CAR };

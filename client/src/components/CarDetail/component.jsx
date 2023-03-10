@@ -36,7 +36,12 @@ const CarDetail = () => {
                                 <Image src={ Arrow }/>Back
                             </Button>
                         </Stack>
-                        <Button className='buy-on-etsy-btn' href={ data.car.etsyLink } target={ '_blank' }>Buy on Etsy</Button>
+                        { data.car.inStock &&
+                            <Button className='buy-on-etsy-btn' href={ data.car.etsyLink } target={ '_blank' }>Buy on Etsy</Button>
+                        }
+                        { !data.car.inStock &&
+                            <div className='out-of-stock'>Out of stock</div> 
+                        }
                         <p style={{ fontSize: '2rem'}} className='car-price'>{ '$' + data.car.price + '.95' }</p>
                         <div className='info-div'>
                             <p style={{ textDecoration: 'underline', fontSize: '2rem'}}>{ data.car.make + ' ' + data.car.model + ' ' + data.car.trim }</p>
