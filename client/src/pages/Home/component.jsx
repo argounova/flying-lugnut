@@ -14,8 +14,8 @@ import FeaturedCard from '../../components/FeaturedCard/component';
 import NewArrival from '../../components/NewArrival/component';
 
 // Images
-import NewCivicEG from '../../assets/images/NewArrival/new-honda-civic-eg.jpg';
-import NewCivicEF from '../../assets/images/NewArrival/new-honda-civic-ef.jpg';
+import NewCar1 from '../../assets/images/NewArrival/civic-custom-2.jpg';
+import NewCar2 from '../../assets/images/NewArrival/civic-ef.jpg';
 
 
 const Home = () => {
@@ -54,16 +54,16 @@ const Home = () => {
             </Row>
             <Row className='d-flex align-items-center justify-content-around' style={{ backgroundColor: '#000', paddingTop: '2%', paddingBottom: '2%' }}>
                 <NewArrival
-                    newProductImage={ NewCivicEG }
-                    newProductTitle={ '1992 Honda Civic EG' }
-                    newProductSubtitle={ 'White Volk TE37' }
-                    etsyLink={ 'https://www.etsy.com/listing/1412950110/1992-honda-civic-eg-hatch-teal-with?click_key=3d579f915fd65ee0ce6b0462575ed973d02ccbb8%3A1412950110&click_sum=bbe9588b&ref=shop_home_active_3&frs=1' }    
+                    newProductImage={ NewCar1 }
+                    newProductTitle={ 'Race Honda Civic Hatch' }
+                    newProductSubtitle={ 'Black Volk TE37' }
+                    etsyLink={ 'https://www.etsy.com/listing/1446523173/honda-civic-custom-racing-hatch-with?click_key=0fb008af4d0f325bacdf66dce8d01aa4ffcc9348%3A1446523173&click_sum=83c3ff5e&ref=shop_home_active_1&frs=1' }    
                 />
                 <NewArrival
-                    newProductImage={ NewCivicEF }
+                    newProductImage={ NewCar2 }
                     newProductTitle={ '1990 Honda Civic EF' }
-                    newProductSubtitle={ 'Black Volk TE37' }
-                    etsyLink={ 'https://www.etsy.com/listing/1427163409/1990-honda-civic-ef-hatch-with-black?click_key=c218b7cfe3d1383f9b1ac9800fc46ddd7f21f1bb%3A1427163409&click_sum=0594d979&ref=shop_home_active_2&frs=1' }    
+                    newProductSubtitle={ 'White Volk TE37' }
+                    etsyLink={ 'https://www.etsy.com/listing/1432305938/1990-honda-civic-ef-hatch-with-white?click_key=35e49b5fcca51ba88f7c43044f7c58877876f42d%3A1432305938&click_sum=19b7f682&ref=shop_home_active_2&frs=1' }    
                 />
             </Row>
         </Container>
