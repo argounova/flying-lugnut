@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import React from 'react';
+import { React, useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -11,15 +11,17 @@ import './style.css';
 import { GET_CAR } from '../../queries/carQueries';
 import Banner1 from '../Banner1/component';
 import Arrow from './arrow-left.svg';
+import { cartContext } from '../../cartContext';
+
 
 const CarDetail = () => {
     const navigate = useNavigate();
+    const cart = useContext(cartContext);
 
     const { id } = useParams();
     const { loading, error, data } = useQuery(GET_CAR, { variables: { id } });
     if(loading) return <p>Loading...</p>;
     if(error) return <p>Someting Went Wrong</p>;
-
 
     return(
         <>
@@ -37,7 +39,7 @@ const CarDetail = () => {
                             </Button>
                         </Stack>
                         { data.car.inStock &&
-                            <Button className='buy-on-etsy-btn' href={ data.car.etsyLink } target={ '_blank' }>Buy on Etsy</Button>
+                            <Button className='buy-on-etsy-btn' onClick={() => cart.addOneToCart(data.car.id)}>Add To Cart</Button>
                         }
                         { !data.car.inStock &&
                             <div className='out-of-stock'>Out of stock</div> 
