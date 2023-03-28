@@ -1,6 +1,5 @@
 import { useQuery } from '@apollo/client';
 import { GET_CARS } from '../../queries/carQueries';
-// import { CartState } from '../../context/Context';
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -13,11 +12,6 @@ const BrowseAllProducts = () => {
     const { loading, error, data } = useQuery(GET_CARS)
     if(loading) return <p>Loading...</p>
     if(error) return <p>Someting Went Wrong</p>
-    // console.log(data.cars);
-    // const { 
-    //     state: { products },
-    // } = CartState();
-    // console.log(state, products);
 
     return (
         <Container fluid>

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 import { GET_CAR } from '../../queries/carQueries';
+import { BsArrowLeftCircle } from 'react-icons/bs';
 import {
     Container,
     Row,
@@ -13,7 +14,6 @@ import {
 } from 'react-bootstrap';
 import './style.css';
 import Banner1 from '../Banner1/component';
-import Arrow from './arrow-left.svg';
 
 const CarDetail = () => {
     const navigate = useNavigate();
@@ -40,7 +40,7 @@ const CarDetail = () => {
                     <Stack gap={3}>
                         <Stack className='d-flex justify-content-end' direction="horizontal" gap={2}>
                             <Button className='back-btn' onClick={() => navigate(-1)}>
-                                <Image src={ Arrow }/>Back
+                                <BsArrowLeftCircle size={'2rem'} />
                             </Button>
                         </Stack>
                         { data.car.inStock &&
@@ -51,7 +51,7 @@ const CarDetail = () => {
                         }
                         <p style={{ fontSize: '2rem'}} className='car-price'>{ '$' + data.car.price + '.95' }</p>
                         <div className='info-div'>
-                            <p style={{ textDecoration: 'underline', fontSize: '2rem'}}>{ data.car.make + ' ' + data.car.model + ' ' + data.car.trim }</p>
+                            <p style={{ textDecoration: 'underline', fontSize: '2rem', textAlign: 'center'}}>{ data.car.make + ' ' + data.car.model + ' ' + data.car.trim }</p>
                             <ul>
                                 <li>{ data.car.seriesName + ' Collection' }</li>
                                 <li>{ 'Number ' + data.car.thisCarInSeries + ' of ' + data.car.totalCarsInSeries + ' in the series' }</li>

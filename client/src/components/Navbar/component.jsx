@@ -1,7 +1,3 @@
-import { FaShoppingBag } from 'react-icons/fa';
-// import { AiFillDelete } from 'react-icons/ai';
-// import { Link } from 'react-router-dom';
-// import { CartState } from '../../context/Context';
 import { 
     Badge,
     Button,
@@ -12,21 +8,16 @@ import {
     Nav,
     Navbar,
 } from 'react-bootstrap';
-import Logo from './flying-lugnut-logo-v1-small.png';
-import './style.css';
-import CartProduct from '../Cart/cartComponent';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
-
-
+import { FaShoppingBag } from 'react-icons/fa';
+import CartProduct from '../CartProduct/component';
+import Logo from './flying-lugnut-logo-v1-small.png';
+import './style.css';
 
 
 const Navigation = () => {
     const cart = useContext(CartContext);
-    // const {
-    //     state: { cart },
-    //     dispatch,
-    //   } = CartState();
 
     // const checkout = async () => {
     //     await fetch('http://localhost:4000/checkout', {

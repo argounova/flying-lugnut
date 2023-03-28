@@ -1,10 +1,13 @@
-import { Button, Image } from 'react-bootstrap';
+import { 
+    Button,
+    Image,
+    Stack
+} from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_CAR } from '../../queries/carQueries';
-
-
+import './style.css';
 
 function CartProduct(props) {
     const cart = useContext(CartContext);
@@ -15,19 +18,17 @@ function CartProduct(props) {
     if(error) return <p>Someting Went Wrong</p>;
 
     const image = data.car.mainImage;
-    const make = data.car.make;
-    const model = data.car.model;
-
 
     return(
         <>
-            <div style={{ textAlign: 'center' }}>
-            <span>{make} {model}</span>
-            </div>
-            <Image src={image} thumbnail={true}/>
-            <div className="d-grid">
-            <Button variant='danger' size='sm' onClick={() => cart.deleteFromCart(id)}>Remove</Button>
-            </div>
+            <Stack gap={1}>
+                <Image src={image} thumbnail={true}/>
+                <div className='d-grid'>
+                    <Button variant='outline-danger' size='sm' onClick={() => cart.deleteFromCart(id)}>
+                        Remove
+                    </Button>
+                </div>
+            </Stack>
             <hr></hr>
         </>
     )
