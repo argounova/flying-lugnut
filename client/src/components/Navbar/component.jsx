@@ -87,7 +87,7 @@ const Navigation = () => {
                                     ))}
                                 </>
                             </Dropdown.Item>
-                            <Dropdown.Item eventKey="4" style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1.25rem', backgroundColor: '#F1D74D', borderRadius: '5px', border: 'solid #F1D74D 1px' }}>View Cart</Dropdown.Item>
+                            <Dropdown.Item href="http://localhost:3000/cart" style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1.25rem', backgroundColor: '#F1D74D', borderRadius: '5px', border: 'solid #F1D74D 1px' }}>View Cart</Dropdown.Item>
                         </DropdownButton>
                     </Nav>
                 </Container>

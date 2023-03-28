@@ -13,6 +13,7 @@ import CarDetail from "./components/CarDetail/component";
 import Home from "./pages/Home/component";
 import BrowseAllProducts from "./pages/BrowseAll/component";
 import NewInventory from './pages/NewInventory/component';
+import Cart from "./pages/Cart/component";
 
 const client = new ApolloClient ({ 
     uri: 'http://localhost:3000/graphql',
@@ -45,6 +46,10 @@ const App = () => {
                             <Route
                                 path="/cars/:id"
                                 element={ <CarDetail /> }
+                            />
+                            <Route 
+                                path="/cart"
+                                element={ <Cart /> }
                             />
                         </Routes>
                     <Footer/>
