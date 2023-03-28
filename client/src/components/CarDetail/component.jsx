@@ -1,27 +1,32 @@
 import { useQuery } from '@apollo/client';
-import { React, useContext } from 'react';
+import { useContext } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image';
-import Stack from 'react-bootstrap/Stack';
-import Button from 'react-bootstrap/Button';
-import './style.css';
+import { CartContext } from '../../context/CartContext';
 import { GET_CAR } from '../../queries/carQueries';
+import {
+    Container,
+    Row,
+    Col,
+    Image,
+    Stack,
+    Button
+} from 'react-bootstrap';
+import './style.css';
 import Banner1 from '../Banner1/component';
 import Arrow from './arrow-left.svg';
-import { cartContext } from '../../cartContext';
-
 
 const CarDetail = () => {
     const navigate = useNavigate();
-    const cart = useContext(cartContext);
+    const cart = useContext(CartContext);
 
     const { id } = useParams();
     const { loading, error, data } = useQuery(GET_CAR, { variables: { id } });
     if(loading) return <p>Loading...</p>;
     if(error) return <p>Someting Went Wrong</p>;
+    console.log(id);
+    console.log(data.car.id);
+
+    
 
     return(
         <>
@@ -39,7 +44,7 @@ const CarDetail = () => {
                             </Button>
                         </Stack>
                         { data.car.inStock &&
-                            <Button className='buy-on-etsy-btn' onClick={() => cart.addOneToCart(data.car.id)}>Add To Cart</Button>
+                            <Button className='buy-on-etsy-btn' onClick={() => cart.addToCart(id)}>Add To Cart</Button>
                         }
                         { !data.car.inStock &&
                             <div className='out-of-stock'>Out of stock</div> 

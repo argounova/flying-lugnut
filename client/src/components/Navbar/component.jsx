@@ -1,42 +1,48 @@
-import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { FaShoppingBag } from 'react-icons/fa';
+// import { AiFillDelete } from 'react-icons/ai';
+// import { Link } from 'react-router-dom';
+// import { CartState } from '../../context/Context';
+import { 
+    Badge,
+    Button,
+    Container,
+    Dropdown,
+    DropdownButton,
+    Form,
+    Nav,
+    Navbar,
+} from 'react-bootstrap';
 import Logo from './flying-lugnut-logo-v1-small.png';
-import CartIcon from './cart.svg';
-import { useState, useContext } from 'react';
-import { cartContext } from '../../cartContext';
-import Cart from '../Cart/component';
+import './style.css';
+import CartProduct from '../Cart/cartComponent';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+
 
 
 
 const Navigation = () => {
-    const cart = useContext(cartContext);
+    const cart = useContext(CartContext);
+    // const {
+    //     state: { cart },
+    //     dispatch,
+    //   } = CartState();
 
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    const checkout = async () => {
-        await fetch('http://localhost:4000/checkout', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({items: cart.items})
-        }).then((response) => {
-            return response.json();
-        }).then((response) => {
-            if(response.url) {
-                window.location.assign(response.url);
-            }
-        });
-    }
-
-    const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
+    // const checkout = async () => {
+    //     await fetch('http://localhost:4000/checkout', {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({items: cart.items})
+    //     }).then((response) => {
+    //         return response.json();
+    //     }).then((response) => {
+    //         if(response.url) {
+    //             window.location.assign(response.url);
+    //         }
+    //     });
+    // }
 
     return (
         <>
@@ -67,38 +73,34 @@ const Navigation = () => {
                         >
                             <Nav>
                                 <Nav.Link href="http://localhost:3000/new-inventory" style={{ color: '#F1D74D'}}>New Inventory</Nav.Link>
-                                <Nav.Link href="http://localhost:3000/browse-all">Browse All</Nav.Link>
-                                <Nav.Link href="http://localhost:3000/coming-soon">Clearance</Nav.Link>
+                                <Nav.Link href="http://localhost:3000/browse-all" style={{ color: '#FFFFFF'}}>Browse All</Nav.Link>
+                                <Nav.Link href="http://localhost:3000/coming-soon" style={{ color: '#FFFFFF'}}>Clearance</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     <Nav>
-                        <Nav.Link onClick={() => handleShow()}>
-                            <img src={CartIcon} alt={'shopping-cart'}/>
-                            ({productsCount})
-                        </Nav.Link>
+                        <DropdownButton
+                            align="end"
+                            title={<><Badge bg="none">({cart.items.length})</Badge><FaShoppingBag color='#ffffff' /></>}
+                            id="dropdown-menu-align-end"
+                            variant="none"
+                            size="lg"
+                        >
+                            <Dropdown.Item>
+                                <>
+                                    {cart.items.map((currentProduct, idx) => (
+                                        <CartProduct
+                                            key={idx}
+                                            id={currentProduct.id}
+                                            quantity={currentProduct.quantity}    
+                                        />
+                                    ))}
+                                </>
+                            </Dropdown.Item>
+                            <Dropdown.Item eventKey="4" style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '1.25rem', backgroundColor: '#F1D74D', borderRadius: '5px', border: 'solid #F1D74D 1px' }}>View Cart</Dropdown.Item>
+                        </DropdownButton>
                     </Nav>
                 </Container>
             </Navbar>
-
-            <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Shopping Cart</Modal.Title>
-                </Modal.Header>
-                    <Modal.Body>
-                        {productsCount > 0 ?
-                        <>
-                            <p>Items in your cart:</p>
-                            {cart.items.map((currentProduct, idx) => (
-                                <Cart key={idx} id={currentProduct.id} quantity={currentProduct.quantity}></Cart>
-                            ))}
-                            <h1>Total: {cart.getTotalCost().toFixed(2)}</h1>
-                            <Button variant='success' onClick={checkout}>Purchase Items!</Button>
-                        </>
-                        :
-                        <h1>There are no items in your cart!</h1>
-                        }
-                    </Modal.Body>
-            </Modal>
         </>
     );
 }
