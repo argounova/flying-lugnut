@@ -11,6 +11,14 @@ const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart'), []);
 export function CartProvider({children}) {
     const [cartProducts, setCartProducts] = useState(cartFromLocalStorage);
 
+    // useEffect(() => {
+    //     const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart'));
+    //     if (cartFromLocalStorage) {
+    //         setCartProducts(cartProducts);
+    //     }
+    // }, []);
+
+
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cartProducts));
     }, [cartProducts])
@@ -21,7 +29,7 @@ export function CartProvider({children}) {
                 ...cartProducts,
                 {
                     id: id,
-                    quantity: 1
+                    quantity: 1,
                 }
             ]
         )
