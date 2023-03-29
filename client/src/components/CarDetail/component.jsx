@@ -23,11 +23,7 @@ const CarDetail = () => {
     const { loading, error, data } = useQuery(GET_CAR, { variables: { id } });
     if(loading) return <p>Loading...</p>;
     if(error) return <p>Someting Went Wrong</p>;
-    console.log(id);
-    console.log(data.car.id);
-
-    
-
+  
     return(
         <>
         <Banner1/>
@@ -44,7 +40,7 @@ const CarDetail = () => {
                             </Button>
                         </Stack>
                         { data.car.inStock &&
-                            <Button className='buy-on-etsy-btn' onClick={() => cart.addToCart(id)}>Add To Cart</Button>
+                            <Button className='buy-on-etsy-btn' onClick={() => cart.addToCart(data)}>Add To Cart</Button>
                         }
                         { !data.car.inStock &&
                             <div className='out-of-stock'>Out of stock</div> 

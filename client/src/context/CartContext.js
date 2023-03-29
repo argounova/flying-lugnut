@@ -23,13 +23,17 @@ export function CartProvider({children}) {
         localStorage.setItem('cart', JSON.stringify(cartProducts));
     }, [cartProducts])
 
-    function addToCart(id) {
+    function addToCart(data) {
         setCartProducts(
             [
                 ...cartProducts,
                 {
-                    id: id,
-                    quantity: 1,
+                    id: data.car.id,
+                    image: data.car.mainImage,
+                    make: data.car.make,
+                    model: data.car.model,
+                    trim: data.car.trim,
+                    price: data.car.price,
                 }
             ]
         )

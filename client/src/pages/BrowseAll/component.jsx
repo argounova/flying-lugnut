@@ -12,7 +12,8 @@ const BrowseAllProducts = () => {
     const { loading, error, data } = useQuery(GET_CARS)
     if(loading) return <p>Loading...</p>
     if(error) return <p>Someting Went Wrong</p>
-
+    console.log(data);
+    
     return (
         <Container fluid>
             <Banner1/>
