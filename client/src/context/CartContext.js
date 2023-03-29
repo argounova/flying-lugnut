@@ -4,6 +4,7 @@ export const CartContext = createContext({
     items: [],
     addToCart: () => {},
     deleteFromCart: () => {},
+    getTotalCost: () => {}
 });
 
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart'), []);
@@ -34,6 +35,7 @@ export function CartProvider({children}) {
                     model: data.car.model,
                     trim: data.car.trim,
                     price: data.car.price,
+                    quantity: 1,
                 }
             ]
         )
@@ -50,10 +52,20 @@ export function CartProvider({children}) {
         )
     }
 
+    function getTotalCost() {
+        let totalCost = 0;
+        cartProducts.map((data) => {
+            const productData = data.price;
+            totalCost += (productData * data.quantity);
+        });
+        return totalCost;
+    }
+
     const contextValue = {
         items: cartProducts,
         addToCart,
         deleteFromCart,
+        getTotalCost
     }
 
 

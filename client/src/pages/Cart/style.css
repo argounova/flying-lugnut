@@ -1,0 +1,9 @@
+.cart-desc {
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.cart-total {
+    width: 25%;
+    margin-left: 1%;
+}
