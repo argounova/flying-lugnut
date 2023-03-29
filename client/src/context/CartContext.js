@@ -35,6 +35,7 @@ export function CartProvider({children}) {
                     model: data.car.model,
                     trim: data.car.trim,
                     price: data.car.price,
+                    stripeId: data.car.stripeId,
                     quantity: 1,
                 }
             ]

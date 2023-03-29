@@ -2,12 +2,9 @@ import {
     Button,
     Col,
     Container,
-    Dropdown,
-    DropdownButton,
     Image,
     ListGroup,
     Row,
-    Stack,
 } from 'react-bootstrap';
 import { CartContext } from '../../context/CartContext';
 import { useContext } from 'react';
@@ -15,7 +12,22 @@ import './style.css';
 
 const Cart = () => {
     const cart = useContext(CartContext);
-    console.log(cart);
+
+    const checkout = async () => {
+        await fetch('http://localhost:4000/checkout', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({items: cart.items})
+        }).then((response) => {
+            return response.json();
+        }).then((response) => {
+            if(response.url) {
+                window.location.assign(response.url); // Forwarding user to Stripe
+            }
+        });
+    }
 
      return (
         <Container fluid className='d-flex flex-row'>
@@ -56,6 +68,7 @@ const Cart = () => {
                             variant='dark'
                             style={{ width: '100%' }}
                             size='lg'
+                            onClick={checkout}
                         >Proceed to Checkout</Button>
                     </ListGroup.Item>
                 </ListGroup>

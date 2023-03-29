@@ -11,6 +11,7 @@ const GET_CARS = gql`
       inStock
       mainImage
       etsyLink
+      stripeId
     }
   }
 `;
@@ -27,6 +28,7 @@ const GET_FEATUREDCARS = gql`
       featured
       mainImage
       etsyLink
+      stripeId
     }
   }
 `;
@@ -42,6 +44,7 @@ const GET_CLEARANCECARS = gql`
       clearance
       mainImage
       etsyLink
+      stripeId
     }
   }
 `;
@@ -57,6 +60,7 @@ const GET_NEWCARS = gql`
       newInventory
       mainImage
       etsyLink
+      stripeId
     }
   }
 `;
@@ -80,6 +84,7 @@ const GET_CAR = gql`
       price
       thisCarInSeries
       totalCarsInSeries
+      stripeId
     }
   }
 `;

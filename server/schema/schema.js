@@ -35,6 +35,7 @@ const CarType = new GraphQLObjectType({
         price: { type: GraphQLInt },
         thisCarInSeries: { type: GraphQLInt },
         totalCarsInSeries: { type: GraphQLInt },
+        stripeId: { type: GraphQLString }
     })
 });
 

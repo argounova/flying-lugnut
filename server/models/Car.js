@@ -55,6 +55,9 @@ const CarSchema = new mongoose.Schema({
     totalCarsInSeries: {
         type: Number,
     },
+    stripeId: {
+        type: String,
+    },
 });
 
 module.exports = mongoose.model('Car', CarSchema);
